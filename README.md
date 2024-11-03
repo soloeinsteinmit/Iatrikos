@@ -4,7 +4,7 @@
 
 ### Project Overview
 
-**Project Name**: MediAgent - Intelligent Clinical Decision Support System  
+**Project Name**: Iatrikos - Intelligent Clinical Decision Support System  
 **Version**: 1.0.0  
 **Author**: Solomon Eshun  
 **Date**: 3rd November, 2024
