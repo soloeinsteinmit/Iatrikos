@@ -152,13 +152,7 @@ pie title Decision Support Accuracy
 ```
 
 2. Time Savings:
-```mermaid
-bar title Time Spent on Clinical Tasks
-    "Clinical Assessment": 45
-    "Documentation": -65
-    "Decision Making" : 30
-    "Patient Communication" : 40
-```
+![Time Spent on Clinical Tasks](time-savings-chart-alt.svg)
 
 ### Key Takeaways for Presentation:
 
