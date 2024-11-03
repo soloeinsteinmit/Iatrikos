@@ -12,7 +12,7 @@
 MLLM Clinical Agent for Decision Support
 This project implements a multi-agent Large Language Model (MLLM) system designed to enhance clinical decision-making. By integrating specialized agents for tasks like diagnosis assistance, treatment planning, safety validation, and documentation, this system helps healthcare professionals make faster, evidence-based decisions with improved accuracy. Built with FastAPI, LangChain, and AutoGen, the agent architecture connects seamlessly to medical databases (e.g., PubMed, RxNorm) and offers a secure, scalable solution to support high-quality patient care.
 
-## Comprehensive Presentation Guide & Speaker Notes
+## Comprehensive Guide & Notes
 
 ### 1. Introduction
 
