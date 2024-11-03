@@ -1,0 +1,29 @@
+# Create the root project directory
+mkdir iatrikos && cd iatrikos
+
+# Create and set up the frontend
+npm create vite@latest frontend -- --template react-ts
+cd frontend
+npm install
+
+# Install required dependencies
+npm install @nextui-org/react framer-motion
+npm install @reduxjs/toolkit react-redux
+npm install axios
+npm install react-router-dom
+npm install tailwindcss postcss autoprefixer
+npm install -D @types/node
+
+
+# From the backend directory
+# Activate virtual environment if not already activated
+source venv/bin/activate  # On Windows use: .\venv\Scripts\activate
+
+# Install required packages with Gemini instead of OpenAI
+pip install fastapi uvicorn python-dotenv langchain google-generativeai pymongo redis pytest
+
+# Additional MongoDB-specific packages
+pip install motor  # AsyncIO MongoDB driver
+pip install beanie  # MongoDB ODM for FastAPI
+
+pip freeze > requirements.txt
