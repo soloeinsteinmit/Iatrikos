@@ -1,0 +1,45 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="600" height="400" fill="#f8f9fa"/>
+    
+    <!-- Title -->
+    <text x="300" y="40" text-anchor="middle" font-size="20" font-weight="bold">Time Spent on Clinical Tasks</text>
+    
+    <!-- Y-axis -->
+    <line x1="100" y1="350" x2="100" y2="50" stroke="black" stroke-width="2"/>
+    
+    <!-- X-axis -->
+    <line x1="100" y1="350" x2="550" y2="350" stroke="black" stroke-width="2"/>
+    
+    <!-- Bars -->
+    <rect x="150" y="200" width="60" height="150" fill="#4a90e2"/>
+    <rect x="250" y="285" width="60" height="65" fill="#e25c4a"/>
+    <rect x="350" y="250" width="60" height="100" fill="#50c878"/>
+    <rect x="450" y="220" width="60" height="130" fill="#f4c042"/>
+    
+    <!-- Labels -->
+    <text x="180" y="370" text-anchor="middle" font-size="12">Clinical
+        <tspan x="180" y="385">Assessment</tspan>
+    </text>
+    <text x="280" y="370" text-anchor="middle" font-size="12">Documentation</text>
+    <text x="380" y="370" text-anchor="middle" font-size="12">Decision
+        <tspan x="380" y="385">Making</tspan>
+    </text>
+    <text x="480" y="370" text-anchor="middle" font-size="12">Patient
+        <tspan x="480" y="385">Communication</tspan>
+    </text>
+    
+    <!-- Values -->
+    <text x="180" y="195" text-anchor="middle" font-size="12">45</text>
+    <text x="280" y="280" text-anchor="middle" font-size="12">65</text>
+    <text x="380" y="245" text-anchor="middle" font-size="12">30</text>
+    <text x="480" y="215" text-anchor="middle" font-size="12">40</text>
+    
+    <!-- Y-axis labels -->
+    <text x="90" y="350" text-anchor="end" font-size="12">0</text>
+    <text x="90" y="300" text-anchor="end" font-size="12">20</text>
+    <text x="90" y="250" text-anchor="end" font-size="12">40</text>
+    <text x="90" y="200" text-anchor="end" font-size="12">60</text>
+    <text x="90" y="150" text-anchor="end" font-size="12">80</text>
+    <text x="90" y="100" text-anchor="end" font-size="12">100</text>
+</svg>
