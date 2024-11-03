@@ -236,3 +236,17 @@ bar title Time Spent on Clinical Tasks
     - UMLS for medical terminology
     - SNOMED CT for clinical terms
 
+### System Architecture
+
+```mermaid
+graph TD
+    A[Web Interface] --> B[API Gateway]
+    B --> C[Agent Orchestrator]
+    C --> D[MLLM Engine]
+    C --> E[Medical Knowledge Base]
+    C --> F[Safety Validator]
+    D --> G[Response Generator]
+    E --> G
+    F --> G
+    G --> B
+```
