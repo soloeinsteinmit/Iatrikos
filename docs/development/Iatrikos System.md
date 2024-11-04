@@ -1,5 +1,122 @@
 # Iatrikos System - Detailed Component Interactions
 
+```mermaid
+graph TB
+    %% Main Components
+    UI[Web Interface]
+    AG[API Gateway]
+    Auth[Auth Service]
+    AO[Agent Orchestrator]
+    KIS[Knowledge Integration]
+    AI[AI Pipeline]
+    SV[Safety Validator]
+    Mon[Monitoring System]
+    DB[(Databases)]
+    Cache[(Cache Layer)]
+
+    %% External Systems
+    subgraph External
+        EHR[EHR Systems]
+        Drug[Drug Database]
+        Lit[Medical Literature]
+    end
+
+    %% AI Components
+    subgraph AI_Components
+        LLM[LLM Models]
+        AG1[Diagnosis Agent]
+        AG2[Treatment Agent]
+        AG3[Safety Agent]
+    end
+
+    %% Connections
+    UI <-->|Requests/Responses| AG
+    AG <-->|Auth Checks| Auth
+    AG -->|Routes| AO
+    
+    %% Orchestrator Connections
+    AO <--> KIS
+    AO <--> AI
+    AO <--> SV
+    
+    %% Knowledge Integration
+    KIS <--> External
+    KIS <--> DB
+    KIS <--> Cache
+    
+    %% AI Pipeline
+    AI <--> AI_Components
+    AI <--> KIS
+    
+    %% Safety & Monitoring
+    SV --> Mon
+    AG --> Mon
+    AO --> Mon
+    Mon --> DB
+
+    
+    class UI,AG,AO primary
+    class KIS,AI,SV secondary
+    class EHR,Drug,Lit external
+```
+
+
+
+```mermaid
+sequenceDiagram
+    participant CP as Clinical Personnel
+    participant UI as Web Interface
+    participant AG as API Gateway
+    participant Auth as Auth Service
+    participant AO as Agent Orchestrator
+    participant KIS as Knowledge Integration
+    participant AI as AI Pipeline
+    participant SV as Safety Validator
+    participant Mon as Monitoring System
+
+    %% Authentication Flow
+    CP->>UI: Login Request
+    UI->>AG: Forward Login
+    AG->>Auth: Verify Credentials
+    Auth-->>AG: Issue JWT Token
+    AG-->>UI: Return Token
+
+    %% Clinical Query Flow
+    CP->>UI: Submit Medical Query
+    UI->>AG: Forward Query + Token
+    AG->>Auth: Validate Token
+    Auth-->>AG: Token Valid
+
+    %% Processing Flow
+    AG->>AO: Route Query to Orchestrator
+    
+    %% Parallel Processing
+    par Knowledge Lookup
+        AO->>KIS: Fetch Relevant Data
+        KIS-->>AO: Return Context
+    and AI Processing
+        AO->>AI: Process Query
+        AI->>KIS: Request Additional Context
+        KIS-->>AI: Provide Context
+        AI-->>AO: Return AI Response
+    end
+
+    %% Validation and Response
+    AO->>SV: Validate Response
+    SV-->>AO: Validation Result
+    
+    %% Return Flow
+    AO-->>AG: Send Validated Response
+    AG-->>UI: Return Final Response
+    UI-->>CP: Display Results
+
+    %% Monitoring
+    Note over Mon: Continuous Logging
+    AG->>Mon: Log Request
+    AO->>Mon: Log Processing
+    SV->>Mon: Log Validation
+```
+
 ## 1. User Interface & Authentication Flow
 
 This component manages how clinical personnel securely access and interact with the system through authentication and data verification processes.
