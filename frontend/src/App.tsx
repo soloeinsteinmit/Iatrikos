@@ -1,10 +1,13 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
+// import IatrikosShell from "./pages/IatrikosShell";
+import { router } from "./routes/BrowserRoutes";
 
 function App() {
   return (
-    <div className="flex items-center justify-center h-dvh  w-full">
-      <h1 className="text-6xl font-bold ">Welcome to Iatrikos!💊🧑‍⚕️</h1>
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
