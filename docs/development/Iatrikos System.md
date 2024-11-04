@@ -43,7 +43,7 @@ This system connects external data sources, storing commonly accessed informatio
 graph TD
     subgraph Knowledge_Flow
         AO[Agent Orchestrator] --> APIs
-
+        
         subgraph APIs[External APIs]
             D[Drug Database]
             C[Clinical Guidelines]
@@ -51,19 +51,20 @@ graph TD
             L[Lab Results]
             M[Medical Literature]
         end
-
+        
         subgraph Cache[Caching Layer]
             R[Redis Cache]
             V[Vector Store]
         end
-
+        
         subgraph DB[Database Layer]
             P[PostgreSQL]
             Mo[MongoDB]
         end
-
-    APIs --> Cache
-    Cache --> DB
+        
+        APIs --> Cache
+        Cache --> DB
+    end
 ```
 
 ### Detailed Notes:
