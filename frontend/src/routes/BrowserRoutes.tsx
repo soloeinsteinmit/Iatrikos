@@ -14,6 +14,7 @@ import ClinicalCases from "../pages/ClinicalCases";
 
 import NewPatient from "../pages/NewPatient";
 import NewCaseInterface from "../pages/NewCase";
+import CaseAnalysis from "../pages/CaseAnalysis";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,8 +25,10 @@ export const router = createBrowserRouter(
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="patients" element={<Patients />} />
         <Route path="cases" element={<ClinicalCases />} />
-        <Route path="/patients/new" element={<NewPatient />} />
-        <Route path="/cases/new" element={<NewCaseInterface />} />
+        <Route path="patients/new" element={<NewPatient />} />
+        <Route path="cases/new" element={<NewCaseInterface />} />
+        {/* <Route path="/cases/:caseId/analysis" element={<CaseAnalysis />} /> */}
+        <Route path="cases/current/analysis" element={<CaseAnalysis />} />
       </Route>
 
       {/* Dashboard routes */}
