@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardBody, CardHeader, Chip, Progress } from "@nextui-org/react";
-import { AlertTriangle, Check, X } from "lucide-react";
+import { AlertTriangle, X } from "lucide-react";
 
 interface Medication {
   name: string;

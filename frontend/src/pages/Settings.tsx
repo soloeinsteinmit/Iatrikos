@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardBody,
@@ -43,7 +42,7 @@ const Settings = () => {
             </div>
           }
         >
-          <Card className="bg-white">
+          <Card className="bg-white p-4">
             <CardBody className="gap-6">
               <div className="flex items-center gap-4">
                 <Avatar
@@ -114,7 +113,7 @@ const Settings = () => {
             </div>
           }
         >
-          <Card className="bg-white">
+          <Card className="bg-white p-4">
             <CardBody className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold">Email Notifications</h3>
@@ -178,7 +177,7 @@ const Settings = () => {
             </div>
           }
         >
-          <Card className="bg-white">
+          <Card className="bg-white p-4">
             <CardBody className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold">Change Password</h3>
@@ -230,7 +229,7 @@ const Settings = () => {
             </div>
           }
         >
-          <Card className="bg-white">
+          <Card className="bg-white p-4">
             <CardBody className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold">Regional Settings</h3>
@@ -283,7 +282,7 @@ const Settings = () => {
       <div className="flex justify-end">
         <Button
           color="primary"
-          size="lg"
+          size="md"
           startContent={<Save className="w-4 h-4" />}
         >
           Save Changes

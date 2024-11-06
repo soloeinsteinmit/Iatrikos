@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardBody, Button, Input } from "@nextui-org/react";
-import { Shield, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const TwoFactorAuth = () => {

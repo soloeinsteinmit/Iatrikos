@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardBody, Button } from "@nextui-org/react";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";

@@ -1,7 +1,5 @@
 import { Card, CardBody, CardHeader, Chip } from "@nextui-org/react";
 import {
-  BarChart,
-  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -16,12 +14,12 @@ import {
 import { Activity, Users, CheckCircle, Clock, Calendar } from "lucide-react";
 
 const Dashboard = () => {
-  const patientData = [
-    { month: "Jan", count: 65 },
-    { month: "Feb", count: 75 },
-    { month: "Mar", count: 85 },
-    { month: "Apr", count: 95 },
-  ];
+  // const patientData = [
+  //   { month: "Jan", count: 65 },
+  //   { month: "Feb", count: 75 },
+  //   { month: "Mar", count: 85 },
+  //   { month: "Apr", count: 95 },
+  // ];
 
   const caseData = [
     { month: "Jan", resolved: 40, new: 45, pending: 15 },

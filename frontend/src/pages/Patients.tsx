@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Table,
   TableHeader,
@@ -16,14 +16,7 @@ import {
   Pagination,
   Avatar,
 } from "@nextui-org/react";
-import {
-  Search,
-  Plus,
-  Filter,
-  SortAsc,
-  MoreVertical,
-  UserPlus,
-} from "lucide-react";
+import { Search, Filter, SortAsc, MoreVertical, UserPlus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Patients = () => {

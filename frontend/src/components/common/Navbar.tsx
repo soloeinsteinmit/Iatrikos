@@ -97,7 +97,7 @@ function NavbarComponent() {
             </DropdownTrigger>
             <DropdownMenu aria-label="Profile Actions">
               <DropdownItem
-                key="profile"
+                key="user-profile"
                 onClick={() => navigate(ROUTES.SETTINGS)}
               >
                 My Profile

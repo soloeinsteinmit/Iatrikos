@@ -1,11 +1,10 @@
-import { Button, Avatar, Badge } from "@nextui-org/react";
+import { Button, Avatar } from "@nextui-org/react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import {
   Users,
   FileText,
   Activity,
   Settings,
-  Bell,
   Plus,
   Calendar,
   Home,

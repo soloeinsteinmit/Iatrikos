@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   CardBody,
@@ -10,7 +9,6 @@ import {
   DropdownItem,
 } from "@nextui-org/react";
 import {
-  BarChart3,
   TrendingUp,
   Users,
   Calendar,

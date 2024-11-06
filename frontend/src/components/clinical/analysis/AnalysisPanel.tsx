@@ -2,10 +2,7 @@ import React from "react";
 import { Button, Card, CardBody, Progress, Chip } from "@nextui-org/react";
 import {
   ExternalLink,
-  AlertCircle,
   Brain,
-  Activity,
-  Clock,
   Shield,
   FileText,
   BookOpen,
@@ -13,7 +10,6 @@ import {
   TrendingDown,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import RecommendedActions from "./RecommendedActions";
 
 interface QuickAnalysis {
   progress: number;
