@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings
 from functools import lru_cache
+from typing import Optional
 
 class Settings(BaseSettings):
     # Base
@@ -15,7 +16,8 @@ class Settings(BaseSettings):
     GOOGLE_API_KEY: str
     
     # Security
-    SECRET_KEY: str
+    SECRET_KEY: str = "your-secret-key-here"  # In production, use a secure secret key
+    ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
     class Config:

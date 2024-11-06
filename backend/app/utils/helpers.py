@@ -5,6 +5,7 @@ from app.core.config import get_settings
 from app.models.patient import Patient
 from app.models.case import ClinicalCase
 from app.models.audit import AuditLog
+from app.models.analysis import ClinicalAnalysis
 import asyncio
 
 class Database:
@@ -46,7 +47,8 @@ async def init_mongodb():
             document_models=[
                 Patient,
                 ClinicalCase,
-                AuditLog
+                AuditLog,
+                ClinicalAnalysis
             ]
         )
         print("🛜🛜🛜 Successfully connected to MongoDB Atlas 🛜🛜🛜")
