@@ -96,10 +96,16 @@ function NavbarComponent() {
               </div>
             </DropdownTrigger>
             <DropdownMenu aria-label="Profile Actions">
-              <DropdownItem key="profile">My Profile</DropdownItem>
+              <DropdownItem
+                key="profile"
+                onClick={() => navigate(ROUTES.SETTINGS)}
+              >
+                My Profile
+              </DropdownItem>
               <DropdownItem
                 key="settings"
                 startContent={<Settings className="h-4 w-4" />}
+                onClick={() => navigate(ROUTES.SETTINGS)}
               >
                 Settings
               </DropdownItem>
@@ -108,6 +114,7 @@ function NavbarComponent() {
                 className="text-danger"
                 color="danger"
                 startContent={<LogOut className="h-4 w-4" />}
+                onClick={() => navigate(ROUTES.AUTH.LOGIN)}
               >
                 Log Out
               </DropdownItem>

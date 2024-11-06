@@ -33,7 +33,7 @@ const IatrikosShell = () => {
 
       <main className="container mx-auto px-4 py-8 flex-grow">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <aside className="hidden lg:block lg:col-span-3 sticky top-24 h-screen overflow-y-auto">
+          <aside className="hidden lg:block lg:col-span-3 sticky top-24 left-0 overflow-y-auto">
             <div className="bg-white rounded-lg shadow-sm p-6 space-y-6">
               <div className="flex items-center space-x-3 pb-6 border-b">
                 <Avatar
