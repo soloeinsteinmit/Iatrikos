@@ -1,11 +1,11 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from beanie import init_beanie
 from typing import Optional
-from app.core.config import get_settings
-from app.models.patient import Patient
-from app.models.case import ClinicalCase
-from app.models.audit import AuditLog
-from app.models.analysis import ClinicalAnalysis
+from backend.app.core.config import get_settings
+from backend.app.models.patient_model import Patient
+from backend.app.models.case_model import ClinicalCase
+from backend.app.models.audit_model import AuditLog
+from backend.app.models.analysis_model import ClinicalAnalysis
 import asyncio
 
 class Database:

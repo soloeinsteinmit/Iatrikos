@@ -1,10 +1,10 @@
 from fastapi import APIRouter, HTTPException, Depends
 from typing import List
-from app.models.case import ClinicalCase
-from app.schemas.case import ClinicalCaseCreate, ClinicalCaseUpdate
+from backend.app.models.case_model import ClinicalCase
+from backend.app.schemas.case_schema import ClinicalCaseCreate, ClinicalCaseUpdate
 from app.services.db.case_service import CaseService
 from app.services.ml.gemini_services import GeminiService
-from app.schemas.analysis import ClinicalAnalysis
+from backend.app.schemas.analysis_schema import ClinicalAnalysisResponseSchema
 
 router = APIRouter()
 case_service = CaseService()
@@ -89,20 +89,25 @@ async def delete_case(case_id: str):
         raise HTTPException(status_code=404, detail="Clinical case not found")
     return {"message": "Case deleted successfully"}
 
-@router.get("/{case_id}/analysis", response_model=ClinicalAnalysis)
+@router.get("/{case_id}/analysis", response_model=ClinicalAnalysisResponseSchema)
 async def get_case_analysis(case_id: str):
     case = await case_service.get_by_id(case_id)
     if not case:
         raise HTTPException(status_code=404, detail="Clinical case not found")
         
     # Construct analysis response from case fields
-    analysis = ClinicalAnalysis(
+    analysis = ClinicalAnalysisResponseSchema(
         progress=case.analysis_progress,
         time_remaining=case.analysis_time_remaining,
         diagnoses=case.diagnoses,
         key_findings=case.key_findings,
         safety_checks=case.safety_checks,
         risk_factors=case.risk_factors,
-        recommendations=case.analysis_recommendations
+        recommended_actions=case.recommended_actions,
+        differential_diagnoses=case.differential_diagnoses,
+        vital_signs=case.vital_signs,
+        medications=case.medications,
+        lab_results=case.lab_results,
+        recommendations=case.recommendations
     )
     return analysis

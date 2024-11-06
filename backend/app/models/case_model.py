@@ -3,9 +3,9 @@ from typing import Optional, List
 from datetime import datetime
 from pydantic import BaseModel
 
-from app.models.analysis import ClinicalAnalysis
+from backend.app.models.analysis_model import ClinicalAnalysis
 
-class VitalSigns(BaseModel):
+class VitalSigns(BaseModel): 
     """Database model for storing vital signs measurements."""
     blood_pressure: str
     heart_rate: int

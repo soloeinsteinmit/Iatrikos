@@ -1,6 +1,6 @@
 from typing import Optional
-from app.models.analysis import ClinicalAnalysis
-from app.schemas.analysis import ClinicalAnalysis as ClinicalAnalysisSchema
+from backend.app.models.analysis_model import ClinicalAnalysis
+from backend.app.schemas.analysis_schema import ClinicalAnalysis as ClinicalAnalysisSchema
 
 class AnalysisService:
     @staticmethod

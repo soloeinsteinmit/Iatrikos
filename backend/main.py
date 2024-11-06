@@ -1,9 +1,9 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.core.config import get_settings
-from app.utils.db import init_mongodb, close_mongodb_connection
-from app.api.v1.routes import api_router
+from backend.app.core.config import get_settings
+from backend.app.utils.db import init_mongodb, close_mongodb_connection
+from backend.app.api.v1.routes import api_router
 
 # Get settings
 settings = get_settings()

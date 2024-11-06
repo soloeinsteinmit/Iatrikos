@@ -1,4 +1,4 @@
-from app.models.case import ClinicalCase
+from backend.app.models.case_model import ClinicalCase
 from .base_service import BaseDbService
 from typing import List, Optional
 

@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from typing import Optional
 from jose import JWTError, jwt
 from passlib.context import CryptContext
-from app.models.user import User
+from backend.app.models.user_model import User
 from app.core.config import get_settings
 from app.utils.email import send_verification_email, send_reset_password_email
 import pyotp

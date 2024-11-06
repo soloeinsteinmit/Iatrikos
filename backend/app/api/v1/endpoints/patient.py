@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 from typing import List
-from app.schemas.patient import PatientCreate, PatientUpdate, PatientResponse
+from backend.app.schemas.patient_schema import PatientCreate, PatientUpdate, PatientResponse
 from app.services.db.patient_service import PatientService
 from app.api.deps import get_current_user
 

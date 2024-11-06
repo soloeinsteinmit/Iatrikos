@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from app.services.auth_service import AuthService
-from app.schemas.auth import (
+from backend.app.schemas.auth_schema import (
     UserLogin, UserRegister, TokenResponse, 
     PasswordReset, NewPassword, VerifyEmail, 
     TwoFactorVerify

@@ -1,7 +1,7 @@
 from typing import List, Optional
 from datetime import datetime
 from beanie import Document, Indexed
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr 
 
 class PatientBase(BaseModel):
     first_name: str
@@ -20,8 +20,8 @@ class PatientBase(BaseModel):
     insurance_id: Optional[str] = None
 
 class Patient(Document, PatientBase):
-    created_at: datetime = datetime.utcnow()
-    updated_at: datetime = datetime.utcnow()
+    created_at: datetime = datetime.now()
+    updated_at: datetime = datetime.now()
     
     class Settings:
         name = "patients"

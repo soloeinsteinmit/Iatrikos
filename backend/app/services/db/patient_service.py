@@ -1,5 +1,5 @@
 from typing import List, Optional
-from app.models.patient import Patient
+from backend.app.models.patient_model import Patient
 from datetime import datetime
 
 class PatientService:

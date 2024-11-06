@@ -30,9 +30,9 @@ class PatientUpdate(PatientBase):
     phone_number: Optional[str] = None
 
 class PatientResponse(PatientBase):
-    id: str
+    _id: str
     created_at: datetime
     updated_at: datetime
 
     class Config:
-        from_attributes = True
+        from_attributes = True 

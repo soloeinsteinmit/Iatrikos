@@ -2,7 +2,7 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from app.core.config import get_settings
-from app.models.user import User
+from backend.app.models.user_model import User
 from datetime import datetime
 
 settings = get_settings()
