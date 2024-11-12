@@ -34,4 +34,6 @@ pip install python-jose[cryptography] passlib[bcrypt] pyotp python-multipart
 
 
 conda install python-jose passlib python-multipart
-pip install pyotp
+pip install pyotp 
+
+

@@ -10,8 +10,14 @@ import {
   PieChart,
   Pie,
   Cell,
+  ResponsiveContainer,
+  Area,
+  AreaChart,
 } from "recharts";
 import { Activity, Users, CheckCircle, Clock, Calendar } from "lucide-react";
+import { useState } from "react";
+import AIPredictiveInsights from "../components/dashboard/AIPredictiveInsights";
+import ClinicalMetrics from "../components/dashboard/ClinicalMetrics";
 
 const Dashboard = () => {
   // const patientData = [
@@ -34,6 +40,8 @@ const Dashboard = () => {
     { name: "Medium", value: 30, color: "#3b82f6" },
     { name: "Low", value: 15, color: "#22c55e" },
   ];
+
+  const [timeRange, setTimeRange] = useState("monthly");
 
   return (
     <div className="space-y-6">
@@ -119,44 +127,65 @@ const Dashboard = () => {
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
+        <div className="md:col-span-2">
+          <ClinicalMetrics />
+        </div>
+        <div>
+          <AIPredictiveInsights />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-6">
         <Card className="md:col-span-2">
           <CardHeader className="flex justify-between">
             <h3 className="font-bold text-lg">Case Analytics</h3>
             <div className="flex gap-2">
-              <Chip size="sm" color="primary">
+              <Chip
+                size="sm"
+                color={timeRange === "monthly" ? "primary" : "default"}
+                onClick={() => setTimeRange("monthly")}
+                className="cursor-pointer"
+              >
                 Monthly
               </Chip>
-              <Chip size="sm" variant="flat">
+              <Chip
+                size="sm"
+                color={timeRange === "weekly" ? "primary" : "default"}
+                onClick={() => setTimeRange("weekly")}
+                className="cursor-pointer"
+              >
                 Weekly
               </Chip>
             </div>
           </CardHeader>
           <CardBody>
-            <LineChart width={600} height={300} data={caseData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-              <XAxis dataKey="month" stroke="#666" />
-              <YAxis stroke="#666" />
-              <Tooltip />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey="new"
-                stroke="#3b82f6"
-                strokeWidth={2}
-              />
-              <Line
-                type="monotone"
-                dataKey="resolved"
-                stroke="#10b981"
-                strokeWidth={2}
-              />
-              <Line
-                type="monotone"
-                dataKey="pending"
-                stroke="#f97316"
-                strokeWidth={2}
-              />
-            </LineChart>
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={caseData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                <XAxis dataKey="month" stroke="#666" />
+                <YAxis stroke="#666" />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="new"
+                  stroke="#3b82f6"
+                  strokeWidth={2}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="resolved"
+                  stroke="#10b981"
+                  strokeWidth={2}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="pending"
+                  stroke="#f97316"
+                  strokeWidth={2}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           </CardBody>
         </Card>
 
@@ -165,14 +194,15 @@ const Dashboard = () => {
             <h3 className="font-bold text-lg">Case Distribution</h3>
           </CardHeader>
           <CardBody>
-            <PieChart width={300} height={300}>
+            <PieChart width={350} height={300}>
               <Pie
                 data={caseDistribution}
-                cx={150}
-                cy={150}
-                innerRadius={60}
-                outerRadius={80}
-                paddingAngle={5}
+                cx={160}
+                cy={130}
+                innerRadius={100}
+                outerRadius={120}
+                accentHeight={20}
+                paddingAngle={8}
                 dataKey="value"
               >
                 {caseDistribution.map((entry, index) => (
@@ -185,6 +215,35 @@ const Dashboard = () => {
           </CardBody>
         </Card>
       </div>
+
+      <Card>
+        <CardHeader>
+          <h3 className="font-bold text-lg">Resource Utilization</h3>
+        </CardHeader>
+        <CardBody>
+          <ResponsiveContainer width="100%" height={400}>
+            <AreaChart
+              data={[
+                { time: "8AM", usage: 30 },
+                { time: "10AM", usage: 70 },
+                { time: "12PM", usage: 90 },
+                { time: "2PM", usage: 85 },
+                { time: "4PM", usage: 60 },
+              ]}
+            >
+              <Area
+                type="monotone"
+                dataKey="usage"
+                stroke="#3b82f6"
+                fill="#93c5fd"
+              />
+              <XAxis dataKey="time" />
+              <YAxis />
+              <Tooltip />
+            </AreaChart>
+          </ResponsiveContainer>
+        </CardBody>
+      </Card>
     </div>
   );
 };

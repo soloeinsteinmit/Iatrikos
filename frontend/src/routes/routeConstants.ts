@@ -29,4 +29,9 @@ export const ROUTES = {
     TERMS: "/terms",
     PRIVACY: "/privacy",
   },
+  TREATMENTS: "/treatments",
+  REPORTS: "/reports",
+  RECORDS: "/records",
+  MESSAGES: "/messages",
+  NOTIFICATIONS: "/notifications",
 };
