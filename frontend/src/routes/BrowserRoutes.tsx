@@ -31,6 +31,8 @@ import TwoFactorAuth from "../pages/auth/TwoFactorAuth";
 import TermsOfService from "../pages/legal/TermsOfService";
 import PrivacyPolicy from "../pages/legal/PrivacyPolicy";
 import { ROUTES } from "./routeConstants";
+import Treatment from "../pages/Treatment";
+import NewTreatmentPlan from "../pages/NewTreatmentPlan";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -70,6 +72,9 @@ export const router = createBrowserRouter(
         <Route path="cases/current/analysis" element={<CaseAnalysis />} />
         <Route path="schedule" element={<Schedule />} />
         <Route path="settings" element={<Settings />} />
+        {/* <Route path="notifications" element={<Notifications />} /> */}
+        <Route path="treatment" element={<Treatment />} />
+        <Route path="treatment/new" element={<NewTreatmentPlan />} />
       </Route>
 
       {/* Legal routes */}

@@ -29,7 +29,10 @@ export const ROUTES = {
     TERMS: "/terms",
     PRIVACY: "/privacy",
   },
-  TREATMENTS: "/treatments",
+  TREATMENTS: {
+    ROOT: "/treatment",
+    NEW: "/treatment/new",
+  },
   REPORTS: "/reports",
   RECORDS: "/records",
   MESSAGES: "/messages",

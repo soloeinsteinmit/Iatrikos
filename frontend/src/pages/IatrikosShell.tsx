@@ -31,7 +31,7 @@ const IatrikosShell = () => {
     { icon: FileText, label: "Cases", route: ROUTES.CASES.LIST },
     { icon: Activity, label: "Analytics", route: ROUTES.ANALYTICS },
     { icon: Calendar, label: "Schedule", route: ROUTES.SCHEDULE },
-    { icon: Stethoscope, label: "Treatments", route: ROUTES.TREATMENTS },
+    { icon: Stethoscope, label: "Treatments", route: ROUTES.TREATMENTS.ROOT },
     { icon: BarChart2, label: "Reports", route: ROUTES.REPORTS },
     { icon: BookOpen, label: "Medical Records", route: ROUTES.RECORDS },
     { icon: MessageSquare, label: "Messages", route: ROUTES.MESSAGES },
