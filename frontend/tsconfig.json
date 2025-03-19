@@ -10,12 +10,9 @@
   ],
   "compilerOptions": {
     "target": "ES2017",
-    "composite": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "noImplicitAny": false,
-    "checkJs": false,
     "strict": false,
     "noEmit": true,
     "incremental": true,
@@ -30,8 +27,9 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "declaration": false
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]
 }

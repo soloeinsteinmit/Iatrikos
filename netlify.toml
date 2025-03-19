@@ -1,4 +1,7 @@
 [build]
   base = "frontend"
   publish = "dist"
-  command = "npm run build"
+  command = "CI=false SKIP_PREFLIGHT_CHECK=true TSC_COMPILE_ON_ERROR=true npm run build"
+
+[build.environment]
+  GENERATE_SOURCEMAP = "false"

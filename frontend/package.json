@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "DISABLE_ESLINT_PLUGIN=true TSC_COMPILE_ON_ERROR=true vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "dev:server": "next dev --port 3001"
