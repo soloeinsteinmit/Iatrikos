@@ -27,3 +27,13 @@ pip install motor  # AsyncIO MongoDB driver
 pip install beanie  # MongoDB ODM for FastAPI
 
 pip freeze > requirements.txt
+
+
+
+pip install python-jose[cryptography] passlib[bcrypt] pyotp python-multipart
+
+
+conda install python-jose passlib python-multipart
+pip install pyotp 
+
+

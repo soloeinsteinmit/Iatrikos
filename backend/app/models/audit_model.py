@@ -1,5 +1,5 @@
 # backend/app/models/audit.py
-from app.models.base import BaseDocument
+from backend.app.models.base_model import BaseDocument
 
 class AuditLog(BaseDocument):
     action: str

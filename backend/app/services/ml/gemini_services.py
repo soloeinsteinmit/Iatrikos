@@ -4,8 +4,16 @@ from app.core.config import get_settings
 class GeminiService:
     def __init__(self):
         settings = get_settings()
-        genai.configure(api_key=settings.GOOGLE_API_KEY)
-        self.model = genai.GenerativeModel('gemini-pro')
+        genai.configure(api_key=settings.GEMINI_API_KEY)
+        self.model = genai.GenerativeModel(
+            'gemini-1.5-pro-002',
+            # tool_config={
+            #     "temperature": 1,
+            #     "top_p": 0.95,
+            #     "top_k": 40,
+            #     "max_output_tokens": 8192,
+            # }
+        )  
     
     async def generate_response(self, prompt: str) -> str:
         try:
