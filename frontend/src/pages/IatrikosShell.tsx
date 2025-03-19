@@ -32,12 +32,17 @@ const IatrikosShell = () => {
     { icon: Activity, label: "Analytics", route: ROUTES.ANALYTICS },
     { icon: Calendar, label: "Schedule", route: ROUTES.SCHEDULE },
     { icon: Stethoscope, label: "Treatments", route: ROUTES.TREATMENTS.ROOT },
-    { icon: BarChart2, label: "Reports", route: ROUTES.REPORTS },
-    { icon: BookOpen, label: "Medical Records", route: ROUTES.RECORDS },
+    { icon: BarChart2, label: "Reports", route: ROUTES.REPORTS.ROOT },
+    { icon: BookOpen, label: "Medical Records", route: ROUTES.MEDICAL_REPORT },
     { icon: MessageSquare, label: "Messages", route: ROUTES.MESSAGES },
   ];
 
   const isActiveRoute = (route: string) => location.pathname === route;
+
+  const others = [
+    { icon: Bell, label: "Notifications", route: ROUTES.NOTIFICATIONS },
+    { icon: Settings, label: "Settings", route: ROUTES.SETTINGS },
+  ];
 
   return (
     <div className="min-h-screen bg-background-content1">
@@ -192,28 +197,20 @@ const IatrikosShell = () => {
 
             {/* Settings and Notifications */}
             <div className="border-t pt-4 mt-4 space-y-2 overflow-hidden">
-              {["Notifications", "Settings"].map((item, index) => (
+              {others.map((item, index) => (
                 <Button
-                  key={item}
+                  key={item.label}
                   className="w-full transition-all duration-300"
                   variant="light"
                   isIconOnly={isCollapsed}
+                  onClick={() => navigate(item.route)}
                   startContent={
-                    index === 0 ? (
-                      <Bell
-                        className={`h-4 w-4 transition-transform duration-300 ${
-                          isCollapsed ? "scale-110" : "scale-100"
-                        }`}
-                      />
-                    ) : (
-                      <Settings
-                        className={`h-4 w-4 transition-transform duration-300 ${
-                          isCollapsed ? "scale-110" : "scale-100"
-                        }`}
-                      />
-                    )
+                    <item.icon
+                      className={`h-4 w-4 transition-transform duration-300 ${
+                        isCollapsed ? "scale-110" : "scale-100"
+                      }`}
+                    />
                   }
-                  onClick={() => index === 1 && navigate(ROUTES.SETTINGS)}
                 >
                   <span
                     className={`transition-all duration-300 ${
@@ -222,7 +219,7 @@ const IatrikosShell = () => {
                         : "opacity-100 translate-x-0 w-auto"
                     } whitespace-nowrap`}
                   >
-                    {item}
+                    {item.label}
                   </span>
                 </Button>
               ))}
@@ -236,7 +233,7 @@ const IatrikosShell = () => {
             isCollapsed ? "ml-20" : "ml-80"
           } mt-[16px] mx-auto p-6`}
         >
-          <div className="bg-white rounded-lg max-w-[1300px] mx-auto shadow-sm p-6">
+          <div className="bg-white rounded-lg  mx-auto shadow-sm p-6">
             <Outlet />
           </div>
         </main>

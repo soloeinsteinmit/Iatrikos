@@ -13,12 +13,17 @@ class Settings(BaseSettings):
     MONGODB_DB_NAME: str
     
     # Gemini
-    GOOGLE_API_KEY: str
+    GEMINI_API_KEY: str
+    OPENFDA_API_KEY: str
+    # UMLS_API_KEY: str
+    LANGCHAIN_API_KEY: str
+    LANGCHAIN_TRACING_V2: bool = True
+    GOOGLE_API_BASE: str
     
     # Security
-    SECRET_KEY: str = "your-secret-key-here"  # In production, use a secure secret key
-    ALGORITHM: str = "HS256"
+    SECRET_KEY: str 
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    ALGORITHM: str = "HS256"
     
     class Config:
         env_file = ".env"

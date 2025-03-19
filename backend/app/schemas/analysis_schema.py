@@ -1,5 +1,5 @@
-from typing import List, Optional
-from pydantic import BaseModel
+from typing import List, Optional, Dict, Any
+from pydantic import BaseModel, Field, ConfigDict
 from datetime import datetime
 from enum import Enum
 # from app.utils.analysis_enums import ActionPriority, SeverityLevel, FindingCategory, PriorityLevel, ActionType, ActionPriority, ActionStatus, VitalStatus, TrendDirection
@@ -168,18 +168,22 @@ class LabResultSchema(BaseModel):
 # Request/Response Schemas
 class ClinicalAnalysisResponseSchema(BaseModel):
     """Response schema for clinical analysis"""
-    progress: float
-    time_remaining: str
-    diagnoses: List[DiagnosisAnalysisSchema]
-    key_findings: List[KeyFindingSchema]
-    safety_checks: List[SafetyCheckSchema]
-    risk_factors: List[RiskFactorSchema]
-    recommended_actions: List[RecommendedActionSchema]
-    differential_diagnoses: List[DifferentialDiagnosisSchema]
-    vital_signs: List[VitalSignSchema]
-    medications: List[MedicationSchema]
-    lab_results: List[LabResultSchema]
-    recommendations: List[str]
+    progress: float = Field(default=0.0)
+    time_remaining: str = Field(default="pending")
+    
+    diagnoses: List[Dict[str, Any]] = Field(default_factory=list)
+    key_findings: List[str] = Field(default_factory=list)
+    safety_checks: List[Dict[str, Any]] = Field(default_factory=list)
+    risk_factors: List[str] = Field(default_factory=list)
+    
+    recommended_actions: List[Dict[str, Any]] = Field(default_factory=list)
+    differential_diagnoses: List[Dict[str, Any]] = Field(default_factory=list)
+    vital_signs: List[Dict[str, Any]] = Field(default_factory=list)
+    medications: List[Dict[str, Any]] = Field(default_factory=list)
+    lab_results: List[Dict[str, Any]] = Field(default_factory=list)
+    recommendations: List[str] = Field(default_factory=list)
+    
+    # model_config = ConfigDict(from_attributes=True)
 
 # Optional: Create specific request schemas if needed
 class ClinicalAnalysisRequestSchema(BaseModel):

@@ -204,7 +204,7 @@ class ClinicalAnalysis(Document):
     """Comprehensive clinical analysis document"""
     case_id: str
     progress: float
-    time_remaining: str
+    time_remaining: str    
     
     # Existing fields
     diagnoses: List[DiagnosisAnalysis]

@@ -33,6 +33,10 @@ import PrivacyPolicy from "../pages/legal/PrivacyPolicy";
 import { ROUTES } from "./routeConstants";
 import Treatment from "../pages/Treatment";
 import NewTreatmentPlan from "../pages/NewTreatmentPlan";
+import Reports from "../pages/Reports";
+import MedicalReport from "../pages/MedicalReport";
+import Messages from "../pages/Messages";
+import Notifications from "../pages/Notifications";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -75,6 +79,12 @@ export const router = createBrowserRouter(
         {/* <Route path="notifications" element={<Notifications />} /> */}
         <Route path="treatment" element={<Treatment />} />
         <Route path="treatment/new" element={<NewTreatmentPlan />} />
+        <Route path="reports" element={<Reports />} />
+
+        {/* <Route path="records/new" element={<NewMedicalRecord />} /> */}
+        <Route path="medical-report" element={<MedicalReport />} />
+        <Route path="messages" element={<Messages />} />
+        <Route path="notifications" element={<Notifications />} />
       </Route>
 
       {/* Legal routes */}

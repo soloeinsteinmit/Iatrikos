@@ -7,7 +7,7 @@ class PatientService:
     async def create_patient(patient_data: dict) -> Patient:
         patient = Patient(**patient_data)
         await patient.insert()
-        return patient
+        return patient            
 
     @staticmethod
     async def get_patient(patient_id: str) -> Optional[Patient]:

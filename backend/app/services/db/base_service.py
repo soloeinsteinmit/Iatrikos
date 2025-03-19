@@ -9,7 +9,7 @@ class BaseDbService(Generic[T]):
         self.model = model
     
     async def create(self, data: BaseModel) -> T:
-        document = self.model(**data.model_dump())
+        document = self.model(**data.dict())
         await document.save()
         return document
     

@@ -33,8 +33,15 @@ export const ROUTES = {
     ROOT: "/treatment",
     NEW: "/treatment/new",
   },
-  REPORTS: "/reports",
-  RECORDS: "/records",
+  REPORTS: {
+    ROOT: "/reports",
+    NEW: "/reports/new",
+  },
+  RECORDS: {
+    ROOT: "/records",
+    NEW: "/records/new",
+  },
+  MEDICAL_REPORT: "/medical-report",
   MESSAGES: "/messages",
   NOTIFICATIONS: "/notifications",
 };
